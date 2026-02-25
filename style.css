@@ -52,6 +52,10 @@ h1 {
   box-sizing: border-box;
 }
 
-/* Button */
+.bmi-highlight td {
+  background-color: #ffeaa7 !important;
+  font-weight: bold;
+}
+* Button */
 button {
   backgr
