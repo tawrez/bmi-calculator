@@ -12,11 +12,11 @@
 
     <!-- Unit toggle tabs -->
     <div class="unit-toggle">
-      <label class="unit-option">
+      <label class="unit-option" id="standard-tab">
         <input type="radio" name="unit" value="standard" onchange="setUnit('standard')">
         Standard
       </label>
-      <label class="unit-option">
+      <label class="unit-option active" id="metric-tab">
         <input type="radio" name="unit" value="metric" checked onchange="setUnit('metric')">
         Metric
       </label>
@@ -61,7 +61,8 @@
         conditions. Always talk to a healthcare professional for personal advice.
       </p>
     </div>
-<div class="bmi-table">
+
+    <div class="bmi-table">
       <h2>BMI Categories</h2>
       <table>
         <thead>
@@ -71,19 +72,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="row-underweight">
             <td>Underweight</td>
             <td>Less than 18.5</td>
           </tr>
-          <tr>
+          <tr id="row-normal">
             <td>Normal weight</td>
             <td>18.5 – 24.9</td>
           </tr>
-          <tr>
+          <tr id="row-overweight">
             <td>Overweight</td>
             <td>25.0 – 29.9</td>
           </tr>
-          <tr>
+          <tr id="row-obese">
             <td>Obesity</td>
             <td>30.0 and above</td>
           </tr>
@@ -99,3 +100,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
