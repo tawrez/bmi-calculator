@@ -1,7 +1,8 @@
 /* Page background */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Arial, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   justify-content: center;
@@ -13,10 +14,10 @@ body {
 /* Main card */
 .container {
   background: #ffffff;
-  padding: 2rem 1.5rem 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  max-width: 420px;
+  padding: 2.2rem 1.8rem 2.4rem;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  max-width: 440px;
   width: 90%;
   text-align: center;
   margin: 0 auto;
@@ -24,110 +25,128 @@ body {
 
 /* Heading */
 h1 {
-  color: #333333;
+  color: #262626;
   margin-top: 0;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  margin-bottom: 1.6rem;
+  letter-spacing: 2px;
+  font-size: 2rem;
 }
 
-/* Unit toggle tabs */
-.unit-toggle {
-  display: inline-flex;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid #0f7285;
-  margin: 0 auto 1.5rem auto;
-  background: #ffffff;
-}
-
-.unit-option {
+/* Unit tabs (pill-style) */
+.unit-tabs {
   position: relative;
-  padding: 0.7rem 1.8rem;
+  background: #f1f5ff;
+  border-radius: 999px;
+  padding: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+  margin: 0 auto 1.8rem;
+  width: fit-content;
+}
+
+.unit-tab {
+  border: none;
+  background: transparent;
+  padding: 0.55rem 1.7rem;
+  border-radius: 999px;
   font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  color: #0f7285;
-  text-align: center;
-  user-select: none;
+  color: #4a5568;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.unit-option input {
-  display: none;
-}
-
-.unit-option:not(.active) {
-  background: #ffffff;
-}
-
-.unit-option.active {
+.unit-tab.active {
   background: #0f7285;
   color: #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 114, 133, 0.35);
 }
 
 /* Input group */
 .input-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
   text-align: left;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 0.8rem;
-  font-weight: bold;
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
 }
 
 .input-group input[type="number"] {
   width: 100%;
-  padding: 0.5rem;
-  border: 2px solid #dddddd;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  padding: 0.7rem 0.8rem;
+  border: 1.8px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
   text-align: center;
   box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input[type="number"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.22);
 }
 
 /* Row for ft + in */
 .row {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .row input {
   width: 100%;
 }
 
-/* Button */
-button {
-  background: #667eea;
+/* Primary button (lavender) */
+.primary-btn {
+  background: #7c8cff; /* lavender-ish */
   color: #ffffff;
-  padding: 1rem 2rem;
+  padding: 0.95rem 2.3rem;
   border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.25s ease, box-shadow 0.25s ease,
+    transform 0.05s ease;
   width: 100%;
-  max-width: 260px;
+  max-width: 280px;
+  margin: 0.6rem auto 0.4rem;
+  display: block;
 }
 
-button:hover {
-  background: #5a67d8;
+.primary-btn:hover {
+  background: #6a7bff;
+  box-shadow: 0 10px 22px rgba(122, 140, 255, 0.45);
+}
+
+.primary-btn:active {
+  transform: translateY(1px);
 }
 
 /* Result + category */
 .result {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 1rem 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 1rem 0 0.4rem;
   min-height: 2.2rem;
+  color: #1a202c;
 }
 
 #category {
-  font-size: 1.2rem;
-  padding: 1rem;
-  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
 }
 
-/* Category color boxes */
+/* Category color chips */
 .normal {
   background: #d4edda;
   color: #155724;
@@ -148,18 +167,20 @@ button:hover {
   color: #721c24;
 }
 
-/* Info text */
+/* Info section */
 .info {
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   text-align: left;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
+  color: #2d3748;
 }
 
 .info h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
   text-align: center;
+  color: #1a202c;
 }
 
 .info p {
@@ -171,28 +192,29 @@ button:hover {
   margin-top: 1.8rem;
   text-align: left;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
   padding: 1rem 1.2rem 1.2rem;
 }
 
 .bmi-table h2 {
   text-align: center;
   margin: 0 0 0.75rem 0;
+  color: #1a202c;
 }
 
 .bmi-table table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .bmi-table th,
 .bmi-table td {
-  border: 1px solid #dddddd;
-  padding: 0.5rem 0.6rem;
+  border: 1px solid #e2e8f0;
+  padding: 0.55rem 0.7rem;
 }
 
 .bmi-table th {
@@ -202,20 +224,20 @@ button:hover {
 }
 
 .bmi-table tr:nth-child(even) td {
-  background-color: #f9f9f9;
+  background-color: #f7fafc;
 }
 
 /* Highlighted BMI row */
 .bmi-highlight td {
-  background-color: #ffeaa7 !important;
-  font-weight: bold;
+  background-color: #fff3c4 !important;
+  font-weight: 600;
 }
 
 /* Footer */
 footer {
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
   font-size: 0.9rem;
-  color: #666666;
+  color: #718096;
   text-align: center;
 }
 
@@ -237,19 +259,20 @@ footer a {
   .container {
     width: 88%;
     max-width: 380px;
-    padding: 1.7rem 1.3rem 2.2rem;
+    padding: 1.8rem 1.4rem 2.1rem;
   }
 
   h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
-  button {
+  .primary-btn {
     font-size: 1rem;
+    max-width: 260px;
   }
 
-  .unit-option {
-    padding: 0.6rem 1.3rem;
+  .unit-tab {
+    padding: 0.5rem 1.4rem;
     font-size: 0.9rem;
   }
 }
