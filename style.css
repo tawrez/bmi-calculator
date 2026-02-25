@@ -1,7 +1,6 @@
-/* Page background */
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   justify-content: center;
@@ -10,19 +9,17 @@ body {
   padding: 1.5rem 0;
 }
 
-/* Main card */
 .container {
   background: #ffffff;
   padding: 2.2rem 1.8rem 2.4rem;
   border-radius: 24px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.28);
   max-width: 440px;
   width: 90%;
   text-align: center;
   margin: 0 auto;
 }
 
-/* Heading */
 h1 {
   color: #262626;
   margin-top: 0;
@@ -31,7 +28,6 @@ h1 {
   font-size: 2rem;
 }
 
-/* Unit tabs */
 .unit-tabs {
   display: flex;
   background: #e8edf5;
@@ -39,7 +35,6 @@ h1 {
   padding: 4px;
   width: fit-content;
   margin: 0 auto 1.8rem;
-  gap: 0;
 }
 
 .unit-tab {
@@ -51,21 +46,20 @@ h1 {
   font-weight: 600;
   cursor: pointer;
   color: #4a5568;
-  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease;
   white-space: nowrap;
 }
 
 .unit-tab.active {
   background: #0f7285;
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(15, 114, 133, 0.35);
+  box-shadow: 0 4px 10px rgba(15,114,133,0.35);
 }
 
 .unit-tab:not(.active):hover {
   background: #d0d8ea;
 }
 
-/* Input group */
 .input-group {
   margin-bottom: 1.3rem;
   text-align: left;
@@ -93,10 +87,9 @@ h1 {
 
 .input-group input[type="number"]:focus {
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.22);
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.22);
 }
 
-/* Row for ft + in */
 .row {
   display: flex;
   gap: 0.6rem;
@@ -106,7 +99,6 @@ h1 {
   width: 100%;
 }
 
-/* Primary button */
 .primary-btn {
   background: #7c8cff;
   color: #ffffff;
@@ -116,7 +108,7 @@ h1 {
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.05s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
   width: 100%;
   max-width: 280px;
   margin: 0.6rem auto 0.4rem;
@@ -125,14 +117,13 @@ h1 {
 
 .primary-btn:hover {
   background: #6a7bff;
-  box-shadow: 0 10px 22px rgba(122, 140, 255, 0.45);
+  box-shadow: 0 10px 22px rgba(122,140,255,0.45);
 }
 
 .primary-btn:active {
   transform: translateY(1px);
 }
 
-/* Result + category */
 .result {
   font-size: 1.9rem;
   font-weight: 700;
@@ -153,7 +144,6 @@ h1 {
 .underweight { background: #fff3cd; color: #856404; }
 .obese { background: #f5c6cb; color: #721c24; }
 
-/* Info section */
 .info {
   margin-top: 1.4rem;
   text-align: left;
@@ -171,13 +161,12 @@ h1 {
 
 .info p { margin: 0.25rem 0; }
 
-/* BMI Categories card + table */
 .bmi-table {
   margin-top: 1.8rem;
   text-align: left;
   background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
   padding: 1rem 1.2rem 1.2rem;
 }
 
@@ -216,7 +205,6 @@ h1 {
   font-weight: 600;
 }
 
-/* Footer */
 footer {
   margin-top: 1.6rem;
   font-size: 0.9rem;
@@ -231,7 +219,6 @@ footer a {
   text-decoration: underline;
 }
 
-/* Site Navigation */
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -257,7 +244,6 @@ footer a {
   color: #ffffff;
 }
 
-/* Related links */
 .related-links {
   margin-top: 1.8rem;
   text-align: left;
@@ -287,23 +273,18 @@ footer a {
 
 .related-links a:hover { text-decoration: underline; }
 
-/* Responsive tweaks */
 @media (max-width: 600px) {
   body { padding: 1.2rem 0; }
-
   .container {
     width: 88%;
     max-width: 380px;
     padding: 1.8rem 1.4rem 2.1rem;
   }
-
   h1 { font-size: 1.8rem; }
-
   .primary-btn {
     font-size: 1rem;
     max-width: 260px;
   }
-
   .unit-tab {
     padding: 0.5rem 1.4rem;
     font-size: 0.9rem;
