@@ -120,6 +120,37 @@ button:hover {
   margin: 0.25rem 0;
 }
 
+.bmi-table {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.bmi-table h2 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.bmi-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.bmi-table th,
+.bmi-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.bmi-table th {
+  background-color: #0f3460;
+  color: white;
+  text-align: left;
+}
+
+.bmi-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
 /* Footer */
 footer {
   margin-top: 1.5rem;
