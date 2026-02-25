@@ -11,6 +11,23 @@ button:hover { background: #5a67d8; }
 .overweight { background: #f8d7da; color: #721c24; }
 .underweight { background: #fff3cd; color: #856404; }
 .obese { background: #f5c6cb; color: #721c24; }
+.info {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.info p {
+  margin: 0.25rem 0;
+}
+
 footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
