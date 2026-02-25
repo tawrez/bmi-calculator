@@ -1,8 +1,7 @@
 /* Page background */
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   justify-content: center;
@@ -32,7 +31,7 @@ h1 {
   font-size: 2rem;
 }
 
-/* Unit tabs (pill-style) */
+/* Unit tabs */
 .unit-tabs {
   display: flex;
   background: #e8edf5;
@@ -107,9 +106,9 @@ h1 {
   width: 100%;
 }
 
-/* Primary button (lavender) */
+/* Primary button */
 .primary-btn {
-  background: #7c8cff; /* lavender-ish */
+  background: #7c8cff;
   color: #ffffff;
   padding: 0.95rem 2.3rem;
   border: none;
@@ -117,8 +116,7 @@ h1 {
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.25s ease, box-shadow 0.25s ease,
-    transform 0.05s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.05s ease;
   width: 100%;
   max-width: 280px;
   margin: 0.6rem auto 0.4rem;
@@ -150,26 +148,10 @@ h1 {
   margin-bottom: 0.6rem;
 }
 
-/* Category color chips */
-.normal {
-  background: #d4edda;
-  color: #155724;
-}
-
-.overweight {
-  background: #f8d7da;
-  color: #721c24;
-}
-
-.underweight {
-  background: #fff3cd;
-  color: #856404;
-}
-
-.obese {
-  background: #f5c6cb;
-  color: #721c24;
-}
+.normal { background: #d4edda; color: #155724; }
+.overweight { background: #f8d7da; color: #721c24; }
+.underweight { background: #fff3cd; color: #856404; }
+.obese { background: #f5c6cb; color: #721c24; }
 
 /* Info section */
 .info {
@@ -187,9 +169,7 @@ h1 {
   color: #1a202c;
 }
 
-.info p {
-  margin: 0.25rem 0;
-}
+.info p { margin: 0.25rem 0; }
 
 /* BMI Categories card + table */
 .bmi-table {
@@ -231,7 +211,6 @@ h1 {
   background-color: #f7fafc;
 }
 
-/* Highlighted BMI row */
 .bmi-highlight td {
   background-color: #fff3c4 !important;
   font-weight: 600;
@@ -245,41 +224,14 @@ footer {
   text-align: center;
 }
 
-footer p {
-  margin: 0;
-}
+footer p { margin: 0; }
 
 footer a {
   color: #667eea;
   text-decoration: underline;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  body {
-    padding: 1.2rem 0;
-  }
-
-  .container {
-    width: 88%;
-    max-width: 380px;
-    padding: 1.8rem 1.4rem 2.1rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .primary-btn {
-    font-size: 1rem;
-    max-width: 260px;
-  }
-
-  .unit-tab {
-    padding: 0.5rem 1.4rem;
-    font-size: 0.9rem;
-  }
-  /* Site Navigation */
+/* Site Navigation */
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -305,7 +257,7 @@ footer a {
   color: #ffffff;
 }
 
-/* Related links section */
+/* Related links */
 .related-links {
   margin-top: 1.8rem;
   text-align: left;
@@ -325,9 +277,7 @@ footer a {
   padding-left: 1.2rem;
 }
 
-.related-links li {
-  margin-bottom: 0.4rem;
-}
+.related-links li { margin-bottom: 0.4rem; }
 
 .related-links a {
   color: #667eea;
@@ -335,8 +285,27 @@ footer a {
   font-size: 0.9rem;
 }
 
-.related-links a:hover {
-  text-decoration: underline;
-}
+.related-links a:hover { text-decoration: underline; }
 
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  body { padding: 1.2rem 0; }
+
+  .container {
+    width: 88%;
+    max-width: 380px;
+    padding: 1.8rem 1.4rem 2.1rem;
+  }
+
+  h1 { font-size: 1.8rem; }
+
+  .primary-btn {
+    font-size: 1rem;
+    max-width: 260px;
+  }
+
+  .unit-tab {
+    padding: 0.5rem 1.4rem;
+    font-size: 0.9rem;
+  }
 }
