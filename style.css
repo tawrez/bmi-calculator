@@ -1,16 +1,108 @@
-body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-.container { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 400px; text-align: center; }
-h1 { color: #333; margin-bottom: 1rem; }
-label { display: block; margin: 1rem 0; font-weight: bold; }
-input { width: 100%; padding: 0.5rem; border: 2px solid #ddd; border-radius: 10px; font-size: 1.1rem; text-align: center; }
-button { background: #667eea; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s; }
-button:hover { background: #5a67d8; }
-.result { font-size: 2rem; font-weight: bold; margin: 1rem 0; min-height: 2.5rem; }
-#category { font-size: 1.2rem; padding: 1rem; border-radius: 10px; }
-.normal { background: #d4edda; color: #155724; }
-.overweight { background: #f8d7da; color: #721c24; }
-.underweight { background: #fff3cd; color: #856404; }
-.obese { background: #f5c6cb; color: #721c24; }
+/* Page background */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main card */
+.container {
+  background: white;
+  padding: 2rem 1.5rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Input group */
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.input-group input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  background: #667eea;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  max-width: 260px;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* Result + category */
+.result {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  min-height: 2.5rem;
+}
+
+#category {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.normal {
+  background: #d4edda;
+  color: #155724;
+}
+
+.overweight {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.underweight {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.obese {
+  background: #f5c6cb;
+  color: #721c24;
+}
+
+/* Info text */
 .info {
   margin-top: 1.5rem;
   text-align: left;
@@ -27,26 +119,8 @@ button:hover { background: #5a67d8; }
 .info p {
   margin: 0.25rem 0;
 }
-.unit-toggle {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
 
-.unit-toggle input {
-  margin-right: 0.25rem;
-}
-
-.row {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.row input {
-  width: 100%;
-}
+/* Footer */
 footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
@@ -61,4 +135,64 @@ footer p {
 footer a {
   color: #667eea;
   text-decoration: underline;
+}
+
+/* Unit toggle tabs */
+.unit-toggle {
+  display: inline-flex;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #0f7285;
+  margin: 0 auto 1.5rem auto;
+  background: white;
+}
+
+.unit-option {
+  position: relative;
+  padding: 0.7rem 1.8rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #0f7285;
+  text-align: center;
+  user-select: none;
+}
+
+.unit-option input {
+  display: none;
+}
+
+/* Unselected tab */
+.unit-option:not(.active) {
+  background: white;
+}
+
+/* Selected tab */
+.unit-option.active {
+  background: #0f7285;
+  color: white;
+}
+
+/* Row for ft + in */
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row input {
+  width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .container {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .unit-option {
+    padding: 0.6rem 1.2rem;
+  }
 }
