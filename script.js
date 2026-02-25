@@ -27,11 +27,13 @@ function setUnit(unit) {
     }
   });
 
-  // Reset result
-  document.getElementById('result').textContent = 'Enter values and click Calculate';
+  // Reset result + category + table highlight
+  document.getElementById('result').textContent =
+    'Enter values and click Calculate';
   const category = document.getElementById('category');
   category.textContent = '';
   category.className = '';
+  clearBmiHighlight();
 }
 
 function calculateBMI() {
@@ -54,23 +56,33 @@ function calculateBMI() {
     const inches = parseFloat(document.getElementById('heightIn').value);
     const pounds = parseFloat(document.getElementById('weightLb').value);
 
-    if ((isNaN(feet) && feet !== 0) || (isNaN(inches) && inches !== 0) || !pounds || feet < 0 || inches < 0 || pounds <= 0) {
+    if (
+      (isNaN(feet) && feet !== 0) ||
+      (isNaN(inches) && inches !== 0) ||
+      !pounds ||
+      feet < 0 ||
+      inches < 0 ||
+      pounds <= 0
+    ) {
       showError();
       return;
     }
 
     const totalInches = feet * 12 + inches;
-    const heightCm = totalInches * 2.54;     // inches → cm
+    const heightCm = totalInches * 2.54; // inches → cm
     heightMeters = heightCm / 100;
-    weightKg = pounds * 0.45359237;          // pounds → kg
+    weightKg = pounds * 0.45359237; // pounds → kg
   }
 
   const bmi = weightKg / (heightMeters * heightMeters);
   document.getElementById('result').textContent = bmi.toFixed(1);
 
   const category = document.getElementById('category');
-  category.textContent = getCategory(bmi);
+  const categoryText = getCategory(bmi);
+  category.textContent = categoryText;
   category.className = getClass(bmi);
+
+  highlightBmiRow(categoryText);
 }
 
 function showError() {
@@ -78,11 +90,12 @@ function showError() {
   const category = document.getElementById('category');
   category.textContent = '';
   category.className = '';
+  clearBmiHighlight();
 }
 
 function getCategory(bmi) {
   if (bmi < 18.5) return 'Underweight';
-  if (bmi < 25) return 'Normal';
+  if (bmi < 25) return 'Normal weight';
   if (bmi < 30) return 'Overweight';
   return 'Obese';
 }
@@ -94,7 +107,40 @@ function getClass(bmi) {
   return 'obese';
 }
 
-// Set initial tab on load
+/* ---- BMI table highlight helpers ---- */
+
+function clearBmiHighlight() {
+  const rows = document.querySelectorAll('.bmi-table tbody tr');
+  rows.forEach(row => row.classList.remove('bmi-highlight'));
+}
+
+function highlightBmiRow(categoryText) {
+  clearBmiHighlight();
+
+  let rowId = '';
+
+  switch (categoryText) {
+    case 'Underweight':
+      rowId = 'row-underweight';
+      break;
+    case 'Normal weight':
+      rowId = 'row-normal';
+      break;
+    case 'Overweight':
+      rowId = 'row-overweight';
+      break;
+    case 'Obese':
+      rowId = 'row-obese';
+      break;
+  }
+
+  if (rowId) {
+    const row = document.getElementById(rowId);
+    if (row) row.classList.add('bmi-highlight');
+  }
+}
+
+/* Set initial tab on load */
 window.addEventListener('DOMContentLoaded', () => {
   setUnit('metric');
 });
