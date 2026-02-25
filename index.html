@@ -11,26 +11,23 @@
     <h1>BMI CALCULATOR</h1>
 
     <!-- Unit toggle tabs -->
-    <div class="unit-toggle">
-      <label class="unit-option active">
-        <input
-          type="radio"
-          name="unit"
-          value="metric"
-          checked
-          onchange="setUnit('metric')"
-        />
+    <div class="unit-tabs">
+      <button
+        class="unit-tab active"
+        id="tab-metric"
+        onclick="setUnit('metric')"
+        type="button"
+      >
         Metric
-      </label>
-      <label class="unit-option">
-        <input
-          type="radio"
-          name="unit"
-          value="standard"
-          onchange="setUnit('standard')"
-        />
+      </button>
+      <button
+        class="unit-tab"
+        id="tab-standard"
+        onclick="setUnit('standard')"
+        type="button"
+      >
         Standard
-      </label>
+      </button>
     </div>
 
     <!-- Metric inputs (cm, kg) -->
@@ -94,7 +91,9 @@
       </label>
     </div>
 
-    <button onclick="calculateBMI()">Calculate Your BMI</button>
+    <button class="primary-btn" onclick="calculateBMI()">
+      Calculate Your BMI
+    </button>
 
     <div id="result" class="result">
       Enter values and click Calculate
@@ -153,6 +152,10 @@
       </p>
     </footer>
   </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
