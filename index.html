@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Free Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <div class="input-group">
+            <label>Height (cm): <input type="number" id="height" value="170" min="50" max="250"></label>
+            <label>Weight (kg): <input type="number" id="weight" value="70" min="20" max="300" step="0.1"></label>
+        </div>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <div id="result" class="result">Enter values and click Calculate</div>
+        <div id="category"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
