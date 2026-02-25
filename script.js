@@ -1,105 +1,163 @@
 let currentUnit = 'metric';
 
 function setUnit(unit) {
-currentUnit = unit;
+  currentUnit = unit;
 
-const metric = document.getElementById('metric-inputs');
-const standard = document.getElementById('standard-inputs');
+  const metric = document.getElementById('metric-inputs');
+  const standard = document.getElementById('standard-inputs');
 
-if (unit === 'metric') {
-metric.style.display = 'block';
-standard.style.display = 'none';
-} else {
-metric.style.display = 'none';
-standard.style.display = 'block';
-}
+  if (unit === 'metric') {
+    metric.style.display = 'block';
+    standard.style.display = 'none';
+  } else {
+    metric.style.display = 'none';
+    standard.style.display = 'block';
+  }
 
-// Highlight active tab
-const options = document.querySelectorAll('.unit-option');
-options.forEach(opt => {
-const input = opt.querySelector('input');
-if (input.value === unit) {
-opt.classList.add('active');
-input.checked = true;
-} else {
-opt.classList.remove('active');
-input.checked = false;
-}
-});
+  // Highlight active tab
+  const options = document.querySelectorAll('.unit-option');
+  options.forEach(opt => {
+    const input = opt.querySelector('input');
+    if (input.value === unit) {
+      opt.classList.add('active');
+      input.checked = true;
+    } else {
+      opt.classList.remove('active');
+      input.checked = false;
+    }
+  });
 
-// Reset result
-document.getElementById('result').textContent = 'Enter values and click Calculate';
-const category = document.getElementById('category');
-category.textContent = '';
-category.className = '';
+  // Reset result + category + highlight
+  document.getElementById('result').textContent =
+    'Enter values and click Calculate';
+  const category = document.getElementById('category');
+  category.textContent = '';
+  category.className = '';
+  clearBmiHighlight();
 }
 
 function calculateBMI() {
-let heightMeters;
-let weightKg;
+  let heightMeters;
+  let weightKg;
 
-if (currentUnit === 'metric') {
-const heightCm = parseFloat(document.getElementById('heightCm').value);
-const weight = parseFloat(document.getElementById('weightKg').value);
+  if (currentUnit === 'metric') {
+    const heightCm = parseFloat(document.getElementById('heightCm').value);
+    const weight = parseFloat(document.getElementById('weightKg').value);
 
-if (!heightCm || !weight || heightCm <= 0 || weight <= 0) {
-showError();
-return;
-}
+    if (!heightCm || !weight || heightCm <= 0 || weight <= 0) {
+      showError();
+      return;
+    }
 
-heightMeters = heightCm / 100;
-weightKg = weight;
-} else {
-const feet = parseFloat(document.getElementById('heightFt').value);
-const inches = parseFloat(document.getElementById('heightIn').value);
-const pounds = parseFloat(document.getElementById('weightLb').value);
+    heightMeters = heightCm / 100;
+    weightKg = weight;
+  } else {
+    const feet = parseFloat(document.getElementById('heightFt').value);
+    const inches = parseFloat(document.getElementById('heightIn').value);
+    const pounds = parseFloat(document.getElementById('weightLb').value);
 
-if ((isNaN(feet) && feet !== 0) || (isNaN(inches) && inches !== 0) || !pounds || feet < 0 || inches < 0 || pounds <= 0) {
-showError();
-return;
-}
+    if (
+      (isNaN(feet) && feet !== 0) ||
+      (isNaN(inches) && inches !== 0) ||
+      !pounds ||
+      feet < 0 ||
+      inches < 0 ||
+      pounds <= 0
+    ) {
+      showError();
+      return;
+    }
 
-const totalInches = feet * 12 + inches;
-const heightCm = totalInches * 2.54; // inches → cm
-heightMeters = heightCm / 100;
-weightKg = pounds * 0.45359237; // pounds → kg
-}
+    const totalInches = feet * 12 + inches;
+    const heightCm = totalInches * 2.54;
+    heightMeters = heightCm / 100;
+    weightKg = pounds * 0.45359237;
+  }
 
-const bmi = weightKg / (heightMeters * heightMeters);
-document.getElementById('result').textContent = bmi.toFixed(1);
+  const bmi = weightKg / (heightMeters * heightMeters);
+  document.getElementById('result').textContent = bmi.toFixed(1);
 
-const category = document.getElementById('category');
-category.textContent = getCategory(bmi);
-category.className = getClass(bmi);
+  const categoryEl = document.getElementById('category');
+  const categoryText = getCategory(bmi);
+  categoryEl.textContent = categoryText;
+  categoryEl.className = getClass(bmi);
+
+  highlightBmiRow(categoryText);
+  scrollToTable();
 }
 
 function showError() {
-document.getElementById('result').textContent = 'Enter valid values';
-const category = document.getElementById('category');
-category.textContent = '';
-category.className = '';
+  document.getElementById('result').textContent = 'Enter valid values';
+  const category = document.getElementById('category');
+  category.textContent = '';
+  category.className = '';
+  clearBmiHighlight();
 }
 
 function getCategory(bmi) {
-if (bmi < 18.5) return 'Underweight';
-if (bmi < 25) return 'Normal';
-if (bmi < 30) return 'Overweight';
-return 'Obese';
+  if (bmi < 18.5) return 'Underweight';
+  if (bmi < 25) return 'Normal weight';
+  if (bmi < 30) return 'Overweight';
+  return 'Obese';
 }
 
 function getClass(bmi) {
-if (bmi < 18.5) return 'underweight';
-if (bmi < 25) return 'normal';
-if (bmi < 30) return 'overweight';
-return 'obese';
+  if (bmi < 18.5) return 'underweight';
+  if (bmi < 25) return 'normal';
+  if (bmi < 30) return 'overweight';
+  return 'obese';
 }
 
-// Set initial tab on load
-window.addEventListener('DOMContentLoaded', () => {
-setUnit('metric');
-});
+/* ---- BMI table highlight helpers ---- */
 
-/* Set initial tab on load */
+function clearBmiHighlight() {
+  const rows = document.querySelectorAll('.bmi-table tbody tr');
+  rows.forEach(row => row.classList.remove('bmi-highlight'));
+}
+
+function highlightBmiRow(categoryText) {
+  clearBmiHighlight();
+
+  let rowId = '';
+
+  switch (categoryText) {
+    case 'Underweight':
+      rowId = 'row-underweight';
+      break;
+    case 'Normal weight':
+      rowId = 'row-normal';
+      break;
+    case 'Overweight':
+      rowId = 'row-overweight';
+      break;
+    case 'Obese':
+      rowId = 'row-obese';
+      break;
+  }
+
+  if (rowId) {
+    const row = document.getElementById(rowId);
+    if (row) row.classList.add('bmi-highlight');
+  }
+}
+
+/* Smooth scroll to table on mobile */
+function scrollToTable() {
+  const tableSection = document.getElementById('bmi-table');
+  if (!tableSection) return;
+
+  const rect = tableSection.getBoundingClientRect();
+  const isVisible =
+    rect.top >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight);
+
+  if (!isVisible) {
+    tableSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/* Initial setup */
 window.addEventListener('DOMContentLoaded', () => {
   setUnit('metric');
 });
