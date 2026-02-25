@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator - Free Tool</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator - Free Tool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-      <h1>BMI Calculator</h1>
+  <div class="container">
+    <h1>BMI CALCULATOR</h1>
 
-<div class="unit-toggle">
-  <label>
-    <input type="radio" name="unit" value="metric" checked onchange="setUnit('metric')">
-    Metric (cm, kg)
-  </label>
-  <label>
-    <input type="radio" name="unit" value="standard" onchange="setUnit('standard')">
-    Standard (ft, in, lb)
-  </label>
-</div>
-
-<div class="input-group" id="metric-inputs">
-  <label>Height (cm):
-    <input type="number" id="heightCm" value="170" min="50" max="250">
-  </label>
-  <label>Weight (kg):
-    <input type="number" id="weightKg" value="70" min="20" max="300" step="0.1">
-  </label>
-</div>
-
-<div class="input-group" id="standard-inputs" style="display:none;">
-  <label>Height:
-    <div class="row">
-      <input type="number" id="heightFt" value="5" min="1" max="8" placeholder="ft">
-      <input type="number" id="heightIn" value="7" min="0" max="11" placeholder="in">
+    <!-- Unit toggle tabs -->
+    <div class="unit-toggle">
+      <label class="unit-option">
+        <input type="radio" name="unit" value="standard" onchange="setUnit('standard')">
+        Standard
+      </label>
+      <label class="unit-option">
+        <input type="radio" name="unit" value="metric" checked onchange="setUnit('metric')">
+        Metric
+      </label>
     </div>
-  </label>
-  <label>Weight (lb):
-    <input type="number" id="weightLb" value="150" min="50" max="700" step="0.1">
-  </label>
-</div>
 
-<button onclick="calculateBMI()">Calculate BMI</button>
-<div id="result" class="result">Enter values and click Calculate</div>
-<div id="category"></div>
+    <!-- Metric inputs (cm, kg) -->
+    <div class="input-group" id="metric-inputs">
+      <label>Height (Centimeters):
+        <input type="number" id="heightCm" value="170" min="50" max="250">
+      </label>
+      <label>Weight (Kilograms):
+        <input type="number" id="weightKg" value="70" min="20" max="300" step="0.1">
+      </label>
+    </div>
+
+    <!-- Standard inputs (ft/in, lb) -->
+    <div class="input-group" id="standard-inputs" style="display:none;">
+      <label>Height
+        <div class="row">
+          <input type="number" id="heightFt" value="5" min="1" max="8" placeholder="Feet">
+          <input type="number" id="heightIn" value="7" min="0" max="11" placeholder="Inches">
+        </div>
+      </label>
+      <label>Weight (Pounds):
+        <input type="number" id="weightLb" value="150" min="50" max="700" step="0.1">
+      </label>
+    </div>
+
+    <button onclick="calculateBMI()">Calculate Your BMI</button>
+    <div id="result" class="result">Enter values and click Calculate</div>
+    <div id="category"></div>
 
     <div class="info">
       <h2>What is BMI?</h2>
@@ -59,12 +62,11 @@
       </p>
     </div>
 
-  <footer>
-    <p>Made by Tawrez • <a href="about.html">About</a> • <a href="privacy.html">Privacy</a></p>
-  </footer>
-</div> <!-- end of .container -->
+    <footer>
+      <p>Made by Tawrez • <a href="about.html">About</a> • <a href="privacy.html">Privacy</a></p>
+    </footer>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
