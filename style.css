@@ -11,3 +11,18 @@ button:hover { background: #5a67d8; }
 .overweight { background: #f8d7da; color: #721c24; }
 .underweight { background: #fff3cd; color: #856404; }
 .obese { background: #f5c6cb; color: #721c24; }
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #667eea;
+  text-decoration: underline;
+}
