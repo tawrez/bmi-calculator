@@ -14,20 +14,16 @@ function setUnit(unit) {
     standard.style.display = 'block';
   }
 
-  // Highlight active tab
-  const options = document.querySelectorAll('.unit-option');
-  options.forEach(opt => {
-    const input = opt.querySelector('input');
-    if (input.value === unit) {
-      opt.classList.add('active');
-      input.checked = true;
-    } else {
-      opt.classList.remove('active');
-      input.checked = false;
-    }
-  });
+  // handle tab active state
+  const tabs = document.querySelectorAll('.unit-tab');
+  tabs.forEach(tab => tab.classList.remove('active'));
+  if (unit === 'metric') {
+    document.getElementById('tab-metric')?.classList.add('active');
+  } else {
+    document.getElementById('tab-standard')?.classList.add('active');
+  }
 
-  // Reset result + category + highlight
+  // reset result
   document.getElementById('result').textContent =
     'Enter values and click Calculate';
   const category = document.getElementById('category');
@@ -83,7 +79,6 @@ function calculateBMI() {
   categoryEl.className = getClass(bmi);
 
   highlightBmiRow(categoryText);
-  scrollToTable();
 }
 
 function showError() {
@@ -108,7 +103,7 @@ function getClass(bmi) {
   return 'obese';
 }
 
-/* ---- BMI table highlight helpers ---- */
+/* --- BMI table highlight helpers --- */
 
 function clearBmiHighlight() {
   const rows = document.querySelectorAll('.bmi-table tbody tr');
@@ -119,7 +114,6 @@ function highlightBmiRow(categoryText) {
   clearBmiHighlight();
 
   let rowId = '';
-
   switch (categoryText) {
     case 'Underweight':
       rowId = 'row-underweight';
@@ -141,21 +135,11 @@ function highlightBmiRow(categoryText) {
   }
 }
 
-/* Smooth scroll to table on mobile */
-function scrollToTable() {
-  const tableSection = document.getElementById('bmi-table');
-  if (!tableSection) return;
+/* Init */
+window.addEventListener('DOMContentLoaded', () => {
+  setUnit('metric');
+});
 
-  const rect = tableSection.getBoundingClientRect();
-  const isVisible =
-    rect.top >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight);
-
-  if (!isVisible) {
-    tableSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
 
 /* Initial setup */
 window.addEventListener('DOMContentLoaded', () => {
