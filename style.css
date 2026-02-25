@@ -5,19 +5,21 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding: 1.5rem 0; /* top/bottom spacing so card floats */
 }
 
 /* Main card */
 .container {
-  background: white;
+  background: #ffffff;
   padding: 2rem 1.5rem 2.5rem;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   max-width: 420px;
   width: 90%;
   text-align: center;
+  margin: 0 auto;
 }
 
 /* Heading */
@@ -53,7 +55,7 @@ h1 {
 /* Button */
 button {
   background: #667eea;
-  color: white;
+  color: #ffffff;
   padding: 1rem 2rem;
   border: none;
   border-radius: 50px;
@@ -93,146 +95,5 @@ button:hover {
 }
 
 .underweight {
-  background: #fff3cd;
-  color: #856404;
-}
-
-.obese {
-  background: #f5c6cb;
-  color: #721c24;
-}
-
-/* Info text */
-.info {
-  margin-top: 1.5rem;
-  text-align: left;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.info h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.info p {
-  margin: 0.25rem 0;
-}
-
-/* BMI Categories card + table */
-.bmi-table {
-  margin-top: 1rem;
-  text-align: left;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1rem 1.2rem 1.2rem;
-}
-
-.bmi-table h2 {
-  text-align: center;
-  margin: 0 0 0.75rem 0;
-}
-
-.bmi-table table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.bmi-table th,
-.bmi-table td {
-  border: 1px solid #ddd;
-  padding: 0.5rem 0.6rem;
-}
-
-.bmi-table th {
-  background-color: #0f3460;
-  color: white;
-  text-align: left;
-}
-
-.bmi-table tr:nth-child(even) td {
-  background-color: #f9f9f9;
-}
-
-/* Footer */
-footer {
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: #666;
-  text-align: center;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer a {
-  color: #667eea;
-  text-decoration: underline;
-}
-
-/* Unit toggle tabs */
-.unit-toggle {
-  display: inline-flex;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid #0f7285;
-  margin: 0 auto 1.5rem auto;
-  background: white;
-}
-
-.unit-option {
-  position: relative;
-  padding: 0.7rem 1.8rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-  color: #0f7285;
-  text-align: center;
-  user-select: none;
-}
-
-.unit-option input {
-  display: none;
-}
-
-/* Unselected tab */
-.unit-option:not(.active) {
-  background: white;
-}
-
-/* Selected tab */
-.unit-option.active {
-  background: #0f7285;
-  color: white;
-}
-
-/* Row for ft + in */
-.row {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.row input {
-  width: 100%;
-}
-
-/* Responsive tweaks */
-@media (max-width: 400px) {
-  .container {
-    padding: 1.5rem 1rem 2rem;
-  }
-
-  button {
-    font-size: 1rem;
-  }
-
-  .unit-option {
-    padding: 0.6rem 1.2rem;
-  }
-}
+  background:
 
