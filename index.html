@@ -1,39 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BMI Calculator - Free Tool</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>BMI Calculator - Free Online Tool</title>
+  " />
 </head>
 <body>
   <div class="container">
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <a href="index.html" class="nav-active">Calculator</a>
+      <a href="bmi-men-women.html">Men &amp; Women</a>
+      <a href="healthy-bmi-tips.html">Healthy Tips</a>
+      <a href="bmi-age-guide.html">BMI &amp; Age</a>
+      <a href="about.html">About</a>
+    </nav>
+
     <h1>BMI CALCULATOR</h1>
 
     <!-- Unit toggle tabs -->
     <div class="unit-tabs">
-  <button
-    class="unit-tab active"
-    id="tab-metric"
-    type="button"
-    onclick="setUnit('metric')"
-  >
-    Metric
-  </button>
-  <button
-    class="unit-tab"
-    id="tab-standard"
-    type="button"
-    onclick="setUnit('standard')"
-  >
-    Standard
-  </button>
-</div>
-
+      <button
+        class="unit-tab active"
+        id="tab-metric"
+        type="button"
+        onclick="setUnit('metric')"
+      >
+        Metric
+      </button>
+      <button
+        class="unit-tab"
+        id="tab-standard"
+        type="button"
+        onclick="setUnit('standard')"
+      >
+        Standard
+      </button>
+    </div>
 
     <!-- Metric inputs (cm, kg) -->
     <div class="input-group" id="metric-inputs">
-      <label>
+      abel>
         Height (Centimeters):
         <input
           type="number"
@@ -43,7 +53,7 @@
           max="250"
         />
       </label>
-      <label>
+      abel>
         Weight (Kilograms):
         <input
           type="number"
@@ -58,7 +68,7 @@
 
     <!-- Standard inputs (ft/in, lb) -->
     <div class="input-group" id="standard-inputs" style="display: none;">
-      <label>
+      abel>
         Height
         <div class="row">
           <input
@@ -79,7 +89,7 @@
           />
         </div>
       </label>
-      <label>
+      abel>
         Weight (Pounds):
         <input
           type="number"
@@ -145,6 +155,16 @@
       </table>
     </div>
 
+    <!-- Internal links for SEO -->
+    <div class="related-links">
+      <h3>Learn More</h3>
+      <ul>
+        ><a href="bmi-men-women.html">BMI for Men and Women — What's the Difference?</a></li>
+        ><a href="healthy-bmi-tips.html">Tips to Maintain a Healthy BMI</a></li>
+        ><a href="bmi-age-guide.html">How BMI Changes as You Get Older</a></li>
+      </ul>
+    </div>
+
     <footer>
       <p>
         Made by Tawrez •
@@ -158,7 +178,4 @@
 </body>
 </html>
 
-  <script src="script.js"></script>
-</body>
-</html>
 
