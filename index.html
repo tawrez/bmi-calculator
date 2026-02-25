@@ -1,101 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Calculator - Free Tool</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator - Free Tool</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-<h1>BMI CALCULATOR</h1>
+  <div class="container">
+    <h1>BMI CALCULATOR</h1>
 
-<!-- Unit toggle tabs -->
-<div class="unit-toggle">
-<label class="unit-option">
-<input type="radio" name="unit" value="standard" onchange="setUnit('standard')">
-Standard
-</label>
-<label class="unit-option">
-<input type="radio" name="unit" value="metric" checked onchange="setUnit('metric')">
-Metric
-</label>
-</div>
+    <!-- Unit toggle tabs -->
+    <div class="unit-toggle">
+      <label class="unit-option active">
+        <input
+          type="radio"
+          name="unit"
+          value="metric"
+          checked
+          onchange="setUnit('metric')"
+        />
+        Metric
+      </label>
+      <label class="unit-option">
+        <input
+          type="radio"
+          name="unit"
+          value="standard"
+          onchange="setUnit('standard')"
+        />
+        Standard
+      </label>
+    </div>
 
-<!-- Metric inputs (cm, kg) -->
-<div class="input-group" id="metric-inputs">
-<label>Height (Centimeters):
-<input type="number" id="heightCm" value="170" min="50" max="250">
-</label>
-<label>Weight (Kilograms):
-<input type="number" id="weightKg" value="70" min="20" max="300" step="0.1">
-</label>
-</div>
+    <!-- Metric inputs (cm, kg) -->
+    <div class="input-group" id="metric-inputs">
+      <label>
+        Height (Centimeters):
+        <input
+          type="number"
+          id="heightCm"
+          value="170"
+          min="50"
+          max="250"
+        />
+      </label>
+      <label>
+        Weight (Kilograms):
+        <input
+          type="number"
+          id="weightKg"
+          value="70"
+          min="20"
+          max="300"
+          step="0.1"
+        />
+      </label>
+    </div>
 
-<!-- Standard inputs (ft/in, lb) -->
-<div class="input-group" id="standard-inputs" style="display:none;">
-<label>Height
-<div class="row">
-<input type="number" id="heightFt" value="5" min="1" max="8" placeholder="Feet">
-<input type="number" id="heightIn" value="7" min="0" max="11" placeholder="Inches">
-</div>
-</label>
-<label>Weight (Pounds):
-<input type="number" id="weightLb" value="150" min="50" max="700" step="0.1">
-</label>
-</div>
+    <!-- Standard inputs (ft/in, lb) -->
+    <div class="input-group" id="standard-inputs" style="display: none;">
+      <label>
+        Height
+        <div class="row">
+          <input
+            type="number"
+            id="heightFt"
+            value="5"
+            min="1"
+            max="8"
+            placeholder="Feet"
+          />
+          <input
+            type="number"
+            id="heightIn"
+            value="7"
+            min="0"
+            max="11"
+            placeholder="Inches"
+          />
+        </div>
+      </label>
+      <label>
+        Weight (Pounds):
+        <input
+          type="number"
+          id="weightLb"
+          value="150"
+          min="50"
+          max="700"
+          step="0.1"
+        />
+      </label>
+    </div>
 
-<button onclick="calculateBMI()">Calculate Your BMI</button>
-<div id="result" class="result">Enter values and click Calculate</div>
-<div id="category"></div>
+    <button onclick="calculateBMI()">Calculate Your BMI</button>
 
-<div class="info">
-<h2>What is BMI?</h2>
-<p>
-Body Mass Index (BMI) is a simple number calculated from your height and weight.
-It is used as a quick screening tool to classify underweight, normal weight,
-overweight, and obesity in adults.
-</p>
-<p>
-BMI is only an estimate and does not account for muscle mass, age, or medical
-conditions. Always talk to a healthcare professional for personal advice.
-</p>
-</div>
-<div class="bmi-table">
-<h2>BMI Categories</h2>
-<table>
-<thead>
-<tr>
-<th>BMI Category</th>
-<th>BMI Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Underweight</td>
-<td>Less than 18.5</td>
-</tr>
-<tr>
-<td>Normal weight</td>
-<td>18.5 – 24.9</td>
-</tr>
-<tr>
-<td>Overweight</td>
-<td>25.0 – 29.9</td>
-</tr>
-<tr>
-<td>Obesity</td>
-<td>30.0 and above</td>
-</tr>
-</tbody>
-</table>
-</div>
+    <div id="result" class="result">
+      Enter values and click Calculate
+    </div>
+    <div id="category"></div>
 
-<footer>
-<p>Made by Tawrez • <a href="about.html">About</a> • <a href="privacy.html">Privacy</a></p>
-</footer>
-</div>
+    <div class="info">
+      <h2>What is BMI?</h2>
+      <p>
+        Body Mass Index (BMI) is a simple number calculated from your height
+        and weight. It is used as a quick screening tool to classify
+        underweight, normal weight, overweight, and obesity in adults.
+      </p>
+      <p>
+        BMI is only an estimate and does not account for muscle mass, age, or
+        medical conditions. Always talk to a healthcare professional for
+        personal advice.
+      </p>
+    </div>
 
-<script src="script.js"></script>
+    <div class="bmi-table" id="bmi-table">
+      <h2>BMI Categories</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>BMI Category</th>
+            <th>BMI Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="row-underweight">
+            <td>Underweight</td>
+            <td>Less than 18.5</td>
+          </tr>
+          <tr id="row-normal">
+            <td>Normal weight</td>
+            <td>18.5 – 24.9</td>
+          </tr>
+          <tr id="row-overweight">
+            <td>Overweight</td>
+            <td>25.0 – 29.9</td>
+          </tr>
+          <tr id="row-obese">
+            <td>Obesity</td>
+            <td>30.0 and above</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>
+        Made by Tawrez •
+        <a href="about.html">About</a> •
+        <a href="privacy.html">Privacy</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
