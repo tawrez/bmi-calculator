@@ -1,61 +1,98 @@
 /* Page background */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 1.5rem 0;
+margin: 0;
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+padding: 1.5rem 0; /* top/bottom spacing so card floats */
 }
 
 /* Main card */
 .container {
-  background: #ffffff;
-  padding: 2rem 1.5rem 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-  margin: 0 auto;
+background: #ffffff;
+padding: 2rem 1.5rem 2.5rem;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+max-width: 420px;
+width: 90%;
+text-align: center;
+margin: 0 auto;
 }
 
 /* Heading */
 h1 {
-  color: #333333;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+color: #333;
+margin-top: 0;
+margin-bottom: 1.5rem;
+letter-spacing: 1px;
 }
 
 /* Input group */
 .input-group {
-  margin-bottom: 1.2rem;
+margin-bottom: 1.2rem;
 }
 
 .input-group label {
-  display: block;
-  margin-bottom: 0.8rem;
-  font-weight: bold;
-  text-align: left;
+display: block;
+margin-bottom: 0.8rem;
+font-weight: bold;
+text-align: left;
 }
 
 .input-group input[type="number"] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 2px solid #dddddd;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  text-align: center;
-  box-sizing: border-box;
+width: 100%;
+padding: 0.5rem;
+border: 2px solid #ddd;
+border-radius: 10px;
+font-size: 1.1rem;
+text-align: center;
+box-sizing: border-box;
 }
 
-.bmi-highlight td {
-  background-color: #ffeaa7 !important;
-  font-weight: bold;
-}
-* Button */
+/* Button */
 button {
-  backgr
+background: #667eea;
+color: #ffffff;
+padding: 1rem 2rem;
+border: none;
+border-radius: 50px;
+font-size: 1.1rem;
+cursor: pointer;
+transition: background 0.3s;
+width: 100%;
+max-width: 260px;
+}
+
+button:hover {
+background: #5a67d8;
+}
+
+/* Result + category */
+.result {
+font-size: 2rem;
+font-weight: bold;
+margin: 1rem 0;
+min-height: 2.5rem;
+}
+
+#category {
+font-size: 1.2rem;
+padding: 1rem;
+border-radius: 10px;
+}
+
+.normal {
+background: #d4edda;
+color: #155724;
+}
+
+.overweight {
+background: #f8d7da;
+color: #721c24;
+}
+
+.underweight {
+background:
