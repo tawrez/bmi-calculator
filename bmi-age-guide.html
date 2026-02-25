@@ -6,20 +6,288 @@
   <title>BMI and Age — How BMI Changes as You Get Older</title>
   " />
   <style>
+    body {
+      padding: 1.5rem 0;
+    }
+
     .article {
       max-width: 720px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
       background: #fff;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 90%;
     }
-    .article h1 { font-size: 1.8rem; color: #1a202c; margin-top: 0; }
-    .article h2 { font-size: 1.3rem; color: #2d3748; margin-top: 2rem; }
-    .article p  { color: #4a5568; line-height: 1.7; margin: 0.6rem 0; }
-    .article ul { color: #4a5568; line-height: 1.8; padding-left: 1.4rem; }
-    .back-link { display: inline-block; margin-bottom: 1.2rem; color: #667eea; text-decoration: none; font-weight: 600; }
-    .back-link:hover { text-decoration: underline; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
-    th, td { border: 1px solid #e2e8f0; padding: 0.55rem 0.7rem; text-align: left; }
-    th { background: #0f3
+
+    .article h1 {
+      font-size: 1.8rem;
+      color: #1a202c;
+      margin-top: 0;
+    }
+
+    .article h2 {
+      font-size: 1.3rem;
+      color: #2d3748;
+      margin-top: 2rem;
+    }
+
+    .article p {
+      color: #4a5568;
+      line-height: 1.7;
+      margin: 0.6rem 0;
+    }
+
+    .article ul {
+      color: #4a5568;
+      line-height: 1.8;
+      padding-left: 1.4rem;
+    }
+
+    .info-card {
+      background: #f1f5ff;
+      border-left: 4px solid #667eea;
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      margin: 1rem 0;
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    .info-card strong {
+      color: #1a202c;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 0.55rem 0.7rem;
+      text-align: left;
+    }
+
+    th {
+      background: #0f3460;
+      color: #fff;
+    }
+
+    tr:nth-child(even) td {
+      background: #f7fafc;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      border: 1px solid #667eea;
+    }
+
+    nav a:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+
+    footer a {
+      color: #667eea;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .article {
+        padding: 1.5rem 1rem;
+      }
+
+      .article h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="article">
+
+    <nav>
+      <a href="index.html">BMI Calculator</a>
+      <a href="bmi-men-women.html">BMI for Men &amp; Women</a>
+      <a href="healthy-bmi-tips.html">Healthy BMI Tips</a>
+      <a href="bmi-age-guide.html">BMI &amp; Age</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a class="back-link" href="index.html">← Back to BMI Calculator</a>
+
+    <h1>BMI and Age — How BMI Changes as You Get Older</h1>
+
+    <p>
+      BMI (Body Mass Index) is calculated the same way regardless of your age,
+      but what it means for your health can shift significantly as you grow
+      older. Understanding how your body changes with age can help you
+      interpret your BMI result more accurately.
+    </p>
+
+    <h2>Why Age Affects BMI Interpretation</h2>
+    <p>
+      As people age, body composition naturally changes even if weight stays
+      the same. Muscle mass tends to decrease (a process called sarcopenia)
+      while body fat tends to increase. This means an older adult could have
+      a "normal" BMI but still carry an unhealthy amount of body fat.
+    </p>
+
+    <div class="info-card">
+      <strong>Key insight:</strong> Two people with identical BMI values — one
+      aged 25 and one aged 60 — may have very different body fat percentages
+      and health risks. Age is an important context when reading BMI results.
+    </div>
+
+    <h2>BMI by Age Group — General Guide</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Age Group</th>
+          <th>Recommended BMI Range</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>18–24 years</td>
+          <td>18.5 – 24.9</td>
+          <td>Standard range applies well</td>
+        </tr>
+        <tr>
+          <td>25–34 years</td>
+          <td>18.5 – 24.9</td>
+          <td>Muscle mass typically at peak</td>
+        </tr>
+        <tr>
+          <td>35–44 years</td>
+          <td>19.0 – 26.0</td>
+          <td>Slight muscle loss begins</td>
+        </tr>
+        <tr>
+          <td>45–54 years</td>
+          <td>19.0 – 27.0</td>
+          <td>Hormonal shifts affect fat distribution</td>
+        </tr>
+        <tr>
+          <td>55–64 years</td>
+          <td>20.0 – 27.0</td>
+          <td>Bone density decreases</td>
+        </tr>
+        <tr>
+          <td>65+ years</td>
+          <td>22.0 – 28.0</td>
+          <td>Slightly higher BMI may be protective</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">
+      * These are general guidelines. Always consult a healthcare professional
+      for personalised advice.
+    </p>
+
+    <h2>Children and Teenagers</h2>
+    <p>
+      For people under 18, standard adult BMI categories do not apply. BMI
+      in children and teens is interpreted using age- and gender-specific
+      growth charts, often referred to as BMI-for-age percentiles. A
+      paediatrician should always assess BMI in children.
+    </p>
+
+    <div class="info-card">
+      <strong>Children's BMI categories (percentile-based):</strong>
+      <ul style="margin-top: 0.5rem;">
+        >Underweight: Below 5th percentile</li>
+        >Healthy weight: 5th to 85th percentile</li>
+        >Overweight: 85th to 95th percentile</li>
+        >Obese: 95th percentile or above</li>
+      </ul>
+    </div>
+
+    <h2>Older Adults (65+)</h2>
+    <p>
+      Research suggests that for adults aged 65 and older, a slightly higher
+      BMI (22–28) may actually be protective. Being slightly heavier in older
+      age can provide reserves during illness and reduce the risk of
+      osteoporosis and falls.
+    </p>
+    <p>
+      However, obesity (BMI above 30) remains a health risk at any age,
+      increasing the chances of heart disease, type 2 diabetes, joint
+      problems, and reduced mobility.
+    </p>
+
+    <h2>How to Stay Healthy at Any Age</h2>
+    <ul>
+      >Maintain regular physical activity, including strength training</li>
+      >Eat a protein-rich diet to preserve muscle mass</li>
+      >Get regular health check-ups including blood pressure and cholesterol</li>
+      >Prioritise sleep and stress management</li>
+      >Track your BMI over time, not just as a one-time measurement</li>
+    </ul>
+
+    <h2>Beyond BMI — What Else to Measure</h2>
+    <p>
+      BMI alone is not a complete picture of health. Doctors also consider:
+    </p>
+    <ul>
+      ><strong>Waist circumference</strong> — belly fat is a strong indicator of metabolic risk</li>
+      ><strong>Waist-to-hip ratio</strong> — indicates fat distribution</li>
+      ><strong>Body fat percentage</strong> — measured via DEXA scan or bioelectrical impedance</li>
+      ><strong>Blood markers</strong> — cholesterol, blood sugar, blood pressure</li>
+    </ul>
+
+    <p style="margin-top: 2rem; text-align: center;">
+      <a href="index.html" style="color: #667eea; font-weight: 600; font-size: 1rem;">
+        Calculate your BMI now →
+      </a>
+    </p>
+
+    <footer>
+      <p>Made by Tawrez • <a href="about.html">About</a> • <a href="privacy.html">Privacy</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
+
