@@ -17,10 +17,11 @@ function setUnit(unit) {
   // handle tab active state
   const tabs = document.querySelectorAll('.unit-tab');
   tabs.forEach(tab => tab.classList.remove('active'));
+
   if (unit === 'metric') {
-    document.getElementById('tab-metric')?.classList.add('active');
+    document.getElementById('tab-metric').classList.add('active');
   } else {
-    document.getElementById('tab-standard')?.classList.add('active');
+    document.getElementById('tab-standard').classList.add('active');
   }
 
   // reset result
@@ -31,6 +32,7 @@ function setUnit(unit) {
   category.className = '';
   clearBmiHighlight();
 }
+
 
 function calculateBMI() {
   let heightMeters;
