@@ -27,7 +27,26 @@ button:hover { background: #5a67d8; }
 .info p {
   margin: 0.25rem 0;
 }
+.unit-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
 
+.unit-toggle input {
+  margin-right: 0.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row input {
+  width: 100%;
+}
 footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
