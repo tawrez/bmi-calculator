@@ -279,4 +279,64 @@ footer a {
     padding: 0.5rem 1.4rem;
     font-size: 0.9rem;
   }
+  /* Site Navigation */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.site-nav a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #667eea;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.nav-active {
+  background: #667eea;
+  color: #ffffff;
+}
+
+/* Related links section */
+.related-links {
+  margin-top: 1.8rem;
+  text-align: left;
+  background: #f7f9ff;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+}
+
+.related-links h3 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1rem;
+  color: #1a202c;
+}
+
+.related-links ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.related-links li {
+  margin-bottom: 0.4rem;
+}
+
+.related-links a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.related-links a:hover {
+  text-decoration: underline;
+}
+
 }
