@@ -120,26 +120,33 @@ button:hover {
   margin: 0.25rem 0;
 }
 
+/* BMI Categories card + table */
 .bmi-table {
   margin-top: 2rem;
   text-align: left;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1rem 1.2rem 1.2rem;
 }
 
 .bmi-table h2 {
   text-align: center;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem 0;
 }
 
 .bmi-table table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .bmi-table th,
 .bmi-table td {
   border: 1px solid #ddd;
-  padding: 0.5rem;
+  padding: 0.5rem 0.6rem;
 }
 
 .bmi-table th {
@@ -151,6 +158,7 @@ button:hover {
 .bmi-table tr:nth-child(even) td {
   background-color: #f9f9f9;
 }
+
 /* Footer */
 footer {
   margin-top: 1.5rem;
@@ -227,3 +235,4 @@ footer a {
     padding: 0.6rem 1.2rem;
   }
 }
+
